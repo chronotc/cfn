@@ -274,7 +274,7 @@ function Cfn (name, template) {
 
     // mutate params
     _.keys(params).forEach(k => {
-      params[_.toLower(k)] = params[k]
+      params[_.toLower(k)] = _.toString(params[k])
     })
     return cf.getTemplateSummary(templateObject).promise()
       .then(data => {
